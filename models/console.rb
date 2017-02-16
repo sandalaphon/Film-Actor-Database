@@ -19,12 +19,24 @@ actor1 = Actor.new({
 })
 actor1.save
 
+actor2 = Actor.new({
+'name' => "Kirk Douglas",
+'gender' => "male",
+'age' => 97
+ })
+actor2.save
+
 filmactor1 = FilmActor.new({
   'film_id' => film1.id,
   'actor_id' => actor1.id
   })
-
 filmactor1.save
+
+filmactor2 = FilmActor.new({
+'film_id' => film1.id,
+'actor_id' => actor2.id
+})
+filmactor2.save
 
 
 
