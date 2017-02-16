@@ -19,8 +19,15 @@ class Film
 
   def actors()
      sql = "SELECT actors.* FROM actors INNER JOIN films_actors ON films_actors.actor_id = actors.id WHERE film_id = #{@id}"
-     actors = SqlRunner.run(sql)
-     return actors.map {|actor| Actor.new(actor)}
+     return Actor.get_many(sql)
+     # actors = SqlRunner.run(sql)
+     # return actors.map {|actor| Actor.new(actor)}
+  end
+
+  def self.get_many(sql)
+    films = SqlRunner.run(sql)
+    return films.map {|film| Film.new(film)}
+
   end
 
 end

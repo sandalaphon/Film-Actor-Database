@@ -12,6 +12,14 @@ film1 = Film.new({
 })
 film1.save
 
+film2 = Film.new({
+  'title' => "Logans Run",
+  'year' => 1974,
+  'genre' => "sci-fi"
+  })
+
+film2.save
+
 actor1 = Actor.new({
 'name' => "Peter Ustinov",
 'gender' => "male",
@@ -37,6 +45,13 @@ filmactor2 = FilmActor.new({
 'actor_id' => actor2.id
 })
 filmactor2.save
+
+filmactor3 = FilmActor.new({
+  'film_id' => film2.id,
+  'actor_id' => actor1.id
+  })
+
+filmactor3.save
 
 
 
