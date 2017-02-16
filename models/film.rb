@@ -27,7 +27,20 @@ class Film
   def self.get_many(sql)
     films = SqlRunner.run(sql)
     return films.map {|film| Film.new(film)}
+  end
 
+  def update
+    sql = "UPDATE films SET (title, year, genre
+    ) = (
+      '#{@title}', #{@year}, '#{genre}'
+    )
+    where id = #{@id} "
+    SqlRunner.run(sql)
+  end
+
+  def self.all
+    sql = "SELECT * FROM films"
+    return Film.get_many(sql)
   end
 
 end
