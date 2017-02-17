@@ -17,4 +17,9 @@ class FilmActor
 
   end
 
+  def self.delete_all
+    sql = "DELETE FROM films_actors;"
+    SqlRunner.run(sql)
+  end
+
 end

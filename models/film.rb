@@ -43,4 +43,9 @@ class Film
     return Film.get_many(sql)
   end
 
+  def self.delete_all
+    sql = "DELETE FROM films;"
+    SqlRunner.run(sql)
+  end
+
 end

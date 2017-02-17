@@ -5,6 +5,10 @@ require_relative('actor.rb')
 require_relative('film_actors_join.rb')
 require_relative('../db/sql_runner.rb')
 
+FilmActor.delete_all
+Film.delete_all
+Actor.delete_all
+
 film1 = Film.new({
 'title' => "Spartacus",
 'year' => 1979,
@@ -13,7 +17,7 @@ film1 = Film.new({
 film1.save
 
 film2 = Film.new({
-  'title' => "Logans Run",
+  'title' => "Logan''s Run",
   'year' => 1974,
   'genre' => "sci-fi"
   })

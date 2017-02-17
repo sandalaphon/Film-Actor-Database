@@ -28,7 +28,10 @@ def self.get_many(sql)
 end
 
 
-
+def self.delete_all
+  sql = "DELETE FROM actors;"
+  SqlRunner.run(sql)
+end
 
 
 
